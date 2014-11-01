@@ -8,7 +8,7 @@ function! airline#extensions#loclist#init(ext)
 endfunction
 
 function! airline#extensions#loclist#apply(...)
-  if &filetype == "cpp"
+  if &filetype == "cpp" || &filetype == "c"
     let w:airline_section_warning = get(w:, 'airline_section_warning', g:airline_section_warning)
     let w:airline_section_warning .= s:spc.g:airline_left_alt_sep.s:spc.'%{airline#extensions#loclist#get_errors()}'
   endif
